@@ -1,0 +1,17 @@
+{
+  "name": "azulema.negociobulma",
+  "version": "1.0.0",
+  "description": "mi negocio web con bulma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "azulema portillo laparra <portilloazulema@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.9.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "jquery-mobile": "^1.5.0-alpha.1"
+  }
+}

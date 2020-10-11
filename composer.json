@@ -1,0 +1,12 @@
+{
+    "name": "azulema/artemade",
+    "description": "negocio con bulma",
+    "type": "project",
+    "authors": [
+        {
+            "name": "azulemaportillo25",
+            "email": "portillolaparraazulema5@gmail.com"
+        }
+    ],
+    "require": {}
+}
