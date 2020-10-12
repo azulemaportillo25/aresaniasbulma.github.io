@@ -2,7 +2,7 @@
 
 require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
-if ($conn->connect_error) die("Ha ocurrido un error :c");
+if ($conn->connect_error) die("Ha ocurrido un error");
 
 if (!empty($_POST['productsize']))
 {
@@ -22,288 +22,453 @@ if (!empty($_POST['productsize']))
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Página de Artesanías en Madera</title>
             <link rel="stylesheet" href="colors.css">
-            <!--Bootstrap css-->
-            <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+            <script src='node_modules/jquery/dist/jquery.min.js'></script>
+            <script src='node_modules/jquery-mobile/js/jquery.mobile.js'></script>
+            <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet">
+            <script src='javascript.js'></script>
         </head>
         <body class='colorpagina'>
-            <div data-role='header' id="encabezado">
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen24.jpg" class="img-fluid imagen" alt="Responsive image"></div>
-                        <div class="col-md-4"><p class="font-italic display-3 letra">Artesanías en Madera</p></div>
-                        <div class="col-md-4"><img src="imagenes/imagen29.jpg" class="img-fluid float-right imagen" alt="Responsive image"></div>
+            <div data-role='header' class="encabezado">
+                <div class="columns">
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-6">
+                                <figure class="image is-128x128">
+                                    <img src="imagenes/imagen24.jpg" class="imagen">
+                                </figure>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="column letra">
+                        <p class=" has-background-danger-dark title is-1 has-text-link is-italic has-text-centered">Artesanías en Madera</p>
+                    </div>
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-4 is-offset-1">
+                                <figure class="image is-128x128">
+                                    <img src="imagenes/imagen29.jpg" class="imagen">
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <br>
-            <!--alerta-->
-            <div class="alert alert-dark" role="alert">
-                <!--menu-->
-                <nav class="nav menu">
-                    <a class="nav-link" href="pagina.php">Página inicial Artesanías en Madera</a>
-                    <a class="nav-link" href="Productos.php">Inicio</a>
-                    <a class="nav-link active" href="lista.php">Lista de Productos</a>
+
+            <!--menu-->
+            <div class="notification is-danger">
+                <nav class="breadcrumb is-medium is-centered" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a class="has-text-primarys has-text-dark" href="pagina.php">Página inicial Artesanías en Madera:</a></li>
+                        <li><a class="has-text-primarys has-text-dark" href="Productos.php">Inicio</a></li>
+                        <li><a class="has-text-primarys has-text-dark" href="lista.php">Lista de Productos</a></li>
+                   </ul>
                 </nav>
             </div>
             <br>
-
-            <div class="p-3 mb-2 bg-primary centrado"><h5>Secciones de Artesanía en Madera</h5></div>
+             
+            <h5 class="letra centrado subtitle is-3 has-text-white has-background-primary-dark">Secciones de Artesanía en Madera</h5>
             <br>
 
-            <!--Cadrd: Example-->
-            <div class="card centrado centrarCar" style="width: 38rem; background: cyan;">
-               <div class="card-body">
-                  <h5 class="card-title">Formulario de registro</h5>
-                  <form method="post" action="Productos.php">
-                    <div class="form-group">
-                       <label for="formGroupExampleInput">Tamaño de Producto:</label>
-                       <input type="text" class="form-control" id="formGroupExampleInput" name="productsize">
+            <!--card con formulario-->
+            <div class="centrado centrarCar">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8 centrarCar">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <article class="tile is-child notification is-primary">
+                                    <p class="title centrado">Formulario de compra</p>
+                                    <br>
+                                    <form method="post" action="Productos.php">
+                                        <label class="label centrado">Tamaño de Producto:</label>
+                                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="productsize">
+                                        <button type="submit"class="button is-danger is-outlined">Guardar datos</button>
+                                        <button type="button" class="button is-link is-outlined"><a href="Productos2.php">Nombre del Producto</a></button>
+                                    </form>
+                                </article>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-dark">Guardar datos</button>
-                    <button type="button" class="btn btn-outline-dark"><a href="productos2.php">Nombre del Producto</a></button>
-                  </form>
-               </div>
+                </div>
+            </div> 
+            <br>
+            <br>
+            <br>
+
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Objetos</p>
+            <br>
+
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen1.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$250</p>
+                                    <p>Tamaño Mediano:</p><p>$160</p>
+                                    <p>Tamaño pequeño:</p><p>$100</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                       <img src="imagenes/imagen7.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span>Tamaños</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                       <p>Tamaño Grande:</p><p>$360</p>
+                                       <p>Tamaño Mediano:</p><p>$250</p>
+                                       <p>Tamaño pequeño:</p><p>$150</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen29.jpg" class="img-fluid imagen2" alt="Responsive image">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                <p>Tamaño Grande:</p><p>$450</p>
+                                <p>Tamaño Mediano:</p><p>$390</p>
+                                <p>Tamaño pequeño:</p><p>$170</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen8.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span>Tamaños</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                        <p>Tamaño Grande:</p><p>$260</p>
+                                        <p>Tamaño Mediano:</p><p>$130</p>
+                                        <p>Tamaño pequeño:</p><p>$100</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <br>
+           
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen16.jpg" class="imagen3">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$460</p>
+                                    <p>Tamaño Mediano:</p><p>$250</p>
+                                    <p>Tamaño pequeño:</p><p>$130</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen28.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                   <span>Tamaños</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                   <div class="dropdown-item">
+                                        <p>Tamaño Grande:</p><p>$460</p>
+                                        <p>Tamaño Mediano:</p><p>3250</p>
+                                        <p>Tamaño pequeño:</p><p>$250</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen40.jpg" class="img-fluid imagen2" alt="Responsive image">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                               <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span>Tamaños</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                        <p>Tamaño Grande:</p><p>$330</p>
+                                        <p>Tamaño Mediano:</p><p>$230</p>
+                                        <p>Tamaño pequeño:</p><p>$110</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen37.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span>Tamaños</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                               <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                        <p>Tamaño Grande:</p><p>$360</p>
+                                        <p>Tamaño Mediano:</p><p>$250</p>
+                                        <p>Tamaño pequeño:</p><p>$150</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column is-4 is-offset-5">
+                    <img src="imagenes/imagen18.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$550</p>
+                                    <p>Tamaño Mediano:</p><p>$430</p>
+                                    <p>Tamaño pequeño:</p><p>$250</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <br>
 
-            <h3 class="letra3">Artesanía de Objetos</h3>
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Animales</p>
             <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen1.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$250</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$160</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$100</p>
-                                </div>
-                            </div>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen21.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen7.jpg" class="img-fluid imagen3" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$360</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$250</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$150</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen29.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$450</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$390</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$170</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen8.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$260</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$130</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$10s0</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen16.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$460</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$250</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$130</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen28.jpg" class="img-fluid imagen6" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$460</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>3250</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$250</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen40.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$330</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$230</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$110</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen37.jpg" class="img-fluid imagen3" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$360</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$250</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$150</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen18.jpg" class="img-fluid imagen5" alt="Responsive image">
-                        <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$550</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$430</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$250</p>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$590</p>
+                                    <p>Tamaño Mediano:</p><p>$400</p>
+                                    <p>Tamaño pequeño:</p><p>$320</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <br>
-                <br>
-                <h3 class="letra3">Artesanía de Animales</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen21.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen32.jpg" class="imagen4">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                   <span>Tamaños</span>
                                 </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$590</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$400</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$320</p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen32.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$580</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$480</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$340</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen5.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$330</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$280</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$190</p>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                   <div class="dropdown-item">
+                                        <p>Tamaño Grande:</p><p>$580</p>
+                                        <p>Tamaño Mediano:</p><p>$480</p>
+                                        <p>Tamaño pequeño:</p><p>$340</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen9.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$380</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$270</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$16s0</p>
-                                </div>
-                            </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen5.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen23.jpg" class="img-fluid imagen3" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$410</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$320</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$160</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen36.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$500</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$430</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$210</p>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$330</p>
+                                    <p>Tamaño Mediano:</p><p>$280</p>
+                                    <p>Tamaño pequeño:</p><p>$190</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagens11.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen9.jpg" class="imagen2">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                   <span>Tamaños</span>
                                 </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$490</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$280</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$210</p>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                   <div class="dropdown-item">
+                                        <p>Tamaño Grande:</p><p>$380</p>
+                                        <p>Tamaño Mediano:</p><p>$270</p>
+                                        <p>Tamaño pequeño:</p><p>$160</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen41.jpg" class="img-fluid imagen2" alt="Responsive image">
-                        <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$300</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$200</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$150</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen23.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$410</p>
+                                    <p>Tamaño Mediano:</p><p>$320</p>
+                                    <p>Tamaño pequeño:</p><p>$160</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen42.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen36.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$500</p>
+                                    <p>Tamaño Mediano:</p><p>$430</p>
+                                    <p>Tamaño pequeño:</p><p>$210</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagens11.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$490</p>
+                                    <p>Tamaño Mediano:</p><p>$280</p>
+                                    <p>Tamaño pequeño:</p><p>$210</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen41.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$300</p>
+                                    <p>Tamaño Mediano:</p><p>$200</p>
+                                    <p>Tamaño pequeño:</p><p>$150</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column is-4 is-offset-5">
+                    <img src="imagenes/imagen42.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
                                     <p class="mb-0">Tamaño Grande:</p><p>$590</p>
                                     <p class="mb-0">Tamaño Mediano:</p><p>$480</p>
                                     <p class="mb-0">Tamaño pequeño:</p><p>$290</p>
@@ -311,382 +476,514 @@ if (!empty($_POST['productsize']))
                             </div>
                         </div>
                     </div>
-                    <br>
                 </div>
-                <br>
-                <h3 class="letra3">Artesanía Talladas</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen17.jpg" class="img-fluid imagen5" alt="Responsive image">
-                           <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$390</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$280</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$140</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen38.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$590</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$410</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$300</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen39.jpg" class="img-fluid imagen4" alt="Responsive image">
-                        <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$340</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$290</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$120</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagens6.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$410</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$250</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$130</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen43.jpg" class="img-fluid imagen4" alt="Responsive image">
-                        <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$480</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$330</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$290</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen44.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$410</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$380</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$190</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen45.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$430</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$380</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$170</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen46.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$510</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$340</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$170</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen47.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$590</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$380</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$290</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <h3 class="letra3">Artesanía de Juguetes</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen50.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$310</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$230</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$110</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen13.jpg" class="img-fluid imagen2" alt="Responsive image">
-                           <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$440</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$370</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$290</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen14.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$390</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$280</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$190</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen15.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$550</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$460</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$170</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen33.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$450</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$340</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$270</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen34.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$350</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$290</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$170</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen28.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$450</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$390</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$170</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen48.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$310</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$270</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$160</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen49.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$210</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$170</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$110</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <h3 class="letra3">Artesanía de Jardinería</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen31.jpg" class="img-fluid imagen2" alt="Responsive image">
-                        <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$360</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$240</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$190</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen27.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$300</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$2300</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$180</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen14.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$390</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$280</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$190</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen2.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$300</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$270</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$150</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen4.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$210</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$170</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$110</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen51.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$360</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$250</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$150</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen24.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$310</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$210</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$130</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen35.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$340</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$310</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$110</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen52.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tamaños
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tamaño Grande:</p><p>$290</p>
-                                    <p class="mb-0">Tamaño Mediano:</p><p>$240</p>
-                                    <p class="mb-0">Tamaño pequeño:</p><p>$130</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
+            </div>
+            <br>
             
-         
-            <script src="bootstrap/jquery-3.4.1.slim.min.js"></script>
-            <script src="bootstrap/popper.min.js"></script>
-            <script src="bootstrap/bootstrap.min.js"></script>    
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía Talladas</p>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen17.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                <p>Tamaño Grande:</p><p>$390</p>
+                                <p>Tamaño Mediano:</p><p>$280</p>
+                                <p>Tamaño pequeño:</p><p>$140</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen38.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$590</p>
+                                    <p>Tamaño Mediano:</p><p>$410</p>
+                                    <p>Tamaño pequeño:</p><p>$300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen39.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$340</p>
+                                    <p>Tamaño Mediano:</p><p>$290</p>
+                                    <p>Tamaño pequeño:</p><p>$120</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagens6.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$410</p>
+                                    <p>Tamaño Mediano:</p><p>$250</p>
+                                    <p>Tamaño pequeño:</p><p>$130</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen43.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$480</p>
+                                    <p>Tamaño Mediano:</p><p>$330</p>
+                                    <p>Tamaño pequeño:</p><p>$290</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen44.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$410</p>
+                                    <p>Tamaño Mediano:</p><p>$380</p>
+                                    <p>Tamaño pequeño:</p><p>$190</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen45.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$430</p>
+                                    <p>Tamaño Mediano:</p><p>$380</p>
+                                    <p>Tamaño pequeño:</p><p>$170</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen46.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$510</p>
+                                    <p>Tamaño Mediano:</p><p>$340</p>
+                                    <p>Tamaño pequeño:</p><p>$170</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-4 is-offset-5">
+                    <img src="imagenes/imagen47.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$590</p>
+                                    <p>Tamaño Mediano:</p><p>$380</p>
+                                    <p>Tamaño pequeño:</p><p>$290</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Juguetes</p>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen50.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$310</p>
+                                    <p>Tamaño Mediano:</p><p>$230</p>
+                                    <p>Tamaño pequeño:</p><p>$110</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen13.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$440</p>
+                                    <p>Tamaño Mediano:</p><p>$370</p>
+                                    <p>Tamaño pequeño:</p><p>$290</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen14.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$390</p>
+                                    <p>Tamaño Mediano:</p><p>$280</p>
+                                    <p>Tamaño pequeño:</p><p>$190</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen15.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$550</p>
+                                    <p>Tamaño Mediano:</p><p>$460</p>
+                                    <p>Tamaño pequeño:</p><p>$170</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen33.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$450</p>
+                                    <p>Tamaño Mediano:</p><p>$340</p>
+                                    <p>Tamaño pequeño:</p><p>$270</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen34.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$350</p>
+                                    <p>Tamaño Mediano:</p><p>$290</p>
+                                    <p>Tamaño pequeño:</p><p>$170</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen48.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$310</p>
+                                    <p>Tamaño Mediano:</p><p>$270</p>
+                                    <p>Tamaño pequeño:</p><p>$160</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen49.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$210</p>
+                                    <p>Tamaño Mediano:</p><p>$170</p>
+                                    <p>Tamaño pequeño:</p><p>$110</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Jardinería</p>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen31.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$360</p>
+                                    <p>Tamaño Mediano:</p><p>$240</p>
+                                    <p>Tamaño pequeño:</p><p>$190</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen27.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$300</p>
+                                    <p>Tamaño Mediano:</p><p>$2300</p>
+                                    <p>Tamaño pequeño:</p><p>$180</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen2.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$300</p>
+                                    <p>Tamaño Mediano:</p><p>$270</p>
+                                    <p>Tamaño pequeño:</p><p>$150</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen4.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$210</p>
+                                    <p>Tamaño Mediano:</p><p>$170</p>
+                                    <p>Tamaño pequeño:</p><p>$110</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen51.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$360</p>
+                                    <p>Tamaño Mediano:</p><p>$250</p>
+                                    <p>Tamaño pequeño:</p><p>$150</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen24.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$310</p>
+                                    <p>Tamaño Mediano:</p><p>$210</p>
+                                    <p>Tamaño pequeño:</p><p>$130</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen35.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$340</p>
+                                    <p>Tamaño Mediano:</p><p>$310</p>
+                                    <p>Tamaño pequeño:</p><p>$110</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen52.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Tamaños</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tamaño Grande:</p><p>$290</p>
+                                    <p>Tamaño Mediano:</p><p>$240</p>
+                                    <p>Tamaño pequeño:</p><p>$130</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+
         </body>
     </html>
 _UNO;

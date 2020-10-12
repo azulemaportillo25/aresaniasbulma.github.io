@@ -2,7 +2,7 @@
 
 require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
-if ($conn->connect_error) die("Ha ocurrido un error :c");
+if ($conn->connect_error) die("Ha ocurrido un error");
 
     echo <<<_UNO
     <!DOCTYPE html>
@@ -12,26 +12,46 @@ if ($conn->connect_error) die("Ha ocurrido un error :c");
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Página de Artesanías en Madera</title>
             <link rel="stylesheet" href="colors.css">
-            <!--Bootstrap css-->
-            <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+            <script src='node_modules/jquery/dist/jquery.min.js'></script>
+            <script src='node_modules/jquery-mobile/js/jquery.mobile.js'></script>
+            <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet">
+            <script src='javascript.js'></script>
         </head>
         <body class='colorpagina'>
-            <div data-role='header' id="encabezado">
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen24.jpg" class="img-fluid imagen" alt="Responsive image"></div>
-                        <div class="col-md-4"><p class="font-italic display-3 letra">Artesanías en Madera</p></div>
-                        <div class="col-md-4"><img src="imagenes/imagen29.jpg" class="img-fluid float-right imagen" alt="Responsive image"></div>
+            <div data-role='header' class="encabezado">
+                <div class="columns">
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-6">
+                                <figure class="image is-128x128">
+                                    <img src="imagenes/imagen24.jpg" class="imagen">
+                                </figure>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="column letra">
+                        <p class=" has-background-danger-dark title is-1 has-text-link is-italic has-text-centered">Artesanías en Madera</p>
+                    </div>
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-4 is-offset-1">
+                                <figure class="image is-128x128">
+                                    <img src="imagenes/imagen29.jpg" class="imagen">
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <br>
-            <div class="alert alert-dark" role="alert">
-                <!--menu-->
-                <nav class="nav menu">
-                    <a class="nav-link" href="pagina.php">Página inicial Artesanías en Madera</a>
-                    <a class="nav-link" href="Productos.php">Productos</a>
+            
+            <!--menu-->
+            <div class="notification is-danger">
+                <nav class="breadcrumb is-medium is-centered" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a class="has-text-primarys has-text-dark" href="pagina.php">Página inicial Artesanías en Madera:</a></li>
+                        <li><a class="has-text-primarys has-text-dark" href="Productos.php">Productos</a></li>
+                   </ul>
                 </nav>
             </div>
             <br>
@@ -88,9 +108,6 @@ $conn->close();
 
   
     echo <<<_DOS
-            <script src="bootstrap/jquery-3.4.1.slim.min.js"></script>
-            <script src="bootstrap/popper.min.js"></script>
-            <script src="bootstrap/bootstrap.min.js"></script>
         </body>
     </html>
 _DOS;

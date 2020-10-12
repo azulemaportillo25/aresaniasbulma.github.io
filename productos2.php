@@ -22,8 +22,10 @@ if (!empty($_POST['tipoproducto']))
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Página de Artesanías en Madera</title>
             <link rel="stylesheet" href="colors.css">
-            <!--Bootstrap css-->
-            <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+            <script src='node_modules/jquery/dist/jquery.min.js'></script>
+            <script src='node_modules/jquery-mobile/js/jquery.mobile.js'></script>
+            <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet">
+            <script src='javascript.js'></script>
         </head>
         <body class='colorpagina'>
             <script>
@@ -31,576 +33,875 @@ if (!empty($_POST['tipoproducto']))
                     alert("Fue exitosa tu compra");
                 }
              </script>
-            <div data-role='header' id="encabezado">
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen24.jpg" class="img-fluid imagen" alt="Responsive image"></div>
-                        <div class="col-md-4"><p class="font-italic display-3 letra">Artesanías en Madera</p></div>
-                        <div class="col-md-4"><img src="imagenes/imagen29.jpg" class="img-fluid float-right imagen" alt="Responsive image"></div>
+            
+            <div data-role='header' class="encabezado">
+                <div class="columns">
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-6">
+                                <figure class="image is-128x128">
+                                    <img src="imagenes/imagen24.jpg" class="imagen">
+                                </figure>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="column letra">
+                        <p class=" has-background-danger-dark title is-1 has-text-link is-italic has-text-centered">Artesanías en Madera</p>
+                    </div>
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-4 is-offset-1">
+                                <figure class="image is-128x128">
+                                    <img src="imagenes/imagen29.jpg" class="imagen">
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <br>
-            <!--alerta-->
-            <div class="alert alert-dark" role="alert">
-                <!--menu-->
-                <nav class="nav menu">
-                    <a class="nav-link" href="pagina.php">Página inicial Artesanías en Madera</a>
-                    <a class="nav-link" href="Productos.php">Inicio</a>
-                    <a class="nav-link active" href="lista.php">Lista de Productos</a>
+
+            <!--menu-->
+            <div class="notification is-danger">
+                <nav class="breadcrumb is-medium is-centered" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a class="has-text-primarys has-text-dark" href="pagina.php">Página inicial Artesanías en Madera:</a></li>
+                        <li><a class="has-text-primarys has-text-dark" href="Productos.php">Inicio</a></li>
+                        <li><a class="has-text-primarys has-text-dark" href="lista.php">Lista de Productos</a></li>
+                   </ul>
                 </nav>
             </div>
             <br>
 
-            <div class="p-3 mb-2 bg-primary centrado"><h5>Secciones de Artesanía en Madera</h5></div>
+            <h5 class="letra centrado subtitle is-3 has-text-white has-background-primary-dark">Secciones de Artesanía en Madera</h5>
             <br>
 
-            <!--Cadrd: Example-->
-            <div class="card centrado centrarCar" style="width: 38rem; background: cyan;">
-               <div class="card-body">
-                  <h5 class="card-title">Formulario de registro</h5>
-                  <form method="post" action="productos2.php">
-                    <div class="form-group">
-                       <label for="formGroupExampleInput">Nombre Producto:</label>
-                       <input type="text" class="form-control" id="formGroupExampleInput" name="tipoproducto">
+            <!--card con formulario-->
+            <div class="centrado centrarCar">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8 centrarCar">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <article class="tile is-child notification is-primary">
+                                    <p class="title centrado">Formulario de compra</p>
+                                    <br>
+                                    <form method="post" action="Productos2.php">
+                                        <label class="label centrado">Nombre Producto::</label>
+                                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="tipoproducto">
+                                        <button type="submit"class="button is-danger is-outlined">Guardar datos</button>
+                                        <button type="button" class="button is-link is-outlined"><a href="lista.php" onclick="alerta()">Finalizar compra</a></button>
+                                    </form>
+                                </article>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-dark">Guardar datos</button>
-                    <button type="button" class="btn btn-outline-dark"><a href="lista.php" onclick="alerta()">Finalizar compra</a></button>
-                  </form>
-               </div>
-            </div>
+                </div>
+            </div> 
+            <br>
             <br>
             <br>
 
-            <h3 class="letra3">Artesanía de Objetos</h3>
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Objetos</p>
             <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen1.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Lámpara de madera.</p>
-                                </div>
-                            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen1.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Nombre</span>
+                            </button>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen7.jpg" class="img-fluid imagen3" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Floreros de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen29.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Barco de lámpara brillante.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen8.jpg" class="img-fluid  imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Sillas mesedora de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen16.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Cucharas de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen28.jpg" class="img-fluid imagen6" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Mesedora de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen40.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Cofre de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen37.jpg" class="img-fluid imagen3" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Taza de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen18.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Casa de madera.</p>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Lámpara de madera.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <br>
-                <br>
-                <h3 class="letra3">Artesanía de Animales</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen21.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
+                <div class="column">
+                    <div class="column">
+                       <img src="imagenes/imagen7.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span>Nombre</span>
                                 </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Garzas de madera.</p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen32.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Caballo de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen5.jpg" class="img-fluid  imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Porta cervilletas de un defín de madera.</p>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                       <p>Floreros de madera.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen9.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tucán de madera.</p>
-                                </div>
-                            </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen29.jpg" class="img-fluid imagen2" alt="Responsive image">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen23.jpg" class="img-fluid imagen3" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Pez espada de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen36.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Colibrí de madera.</p>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                <p>Barco de lámpara brillante.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagens11.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
+                </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen8.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span> Nombre</span>
                                 </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Elefante de madera.</p>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                        <p>Sillas mesedora de madera.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen41.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Búho de madera.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+           
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen16.jpg" class="imagen3">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span>Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Cucharas de madera.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4"><img src="imagenes/imagen42.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen28.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                   <span> Nombre</span>
                                 </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                   <div class="dropdown-item">
+                                        <p>Mesedora de madera.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen40.jpg" class="img-fluid imagen2" alt="Responsive image">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                               <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span> Nombre</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                        <p>Cofre de madera.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen37.jpg" class="imagen3">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                    <span> Nombre</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                               <div class="dropdown-content has-background-warning">
+                                    <div class="dropdown-item">
+                                        <p>Taza de madera.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column is-4 is-offset-5">
+                    <img src="imagenes/imagen18.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Casa de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Animales</p>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen21.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Garzas de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen32.jpg" class="imagen4">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                   <span> Nombre</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                   <div class="dropdown-item">
+                                        <p>Caballo de madera.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen5.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Porta cervilletas de un defín de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <img src="imagenes/imagen9.jpg" class="imagen2">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                   <span> Nombre</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                <div class="dropdown-content has-background-warning">
+                                   <div class="dropdown-item">
+                                        <p>Tucán de madera.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen23.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Pez espada de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen36.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Colibrí de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagens11.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Elefante de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen41.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Búho de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column is-4 is-offset-5">
+                    <img src="imagenes/imagen42.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
                                     <p class="mb-0">Conejo de madera.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br>
                 </div>
-                <br>
-                <h3 class="letra3">Artesanía Talladas</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen17.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Obrero de madera.</p>
-                                </div>
-                            </div></div>
-                        <div class="col-md-4"><img src="imagenes/imagen38.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Estatua de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen39.jpg" class="img-fluid  imagen4" alt="Responsive image">
-                        <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Señor de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagens6.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Flor talla de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen43.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Adorno de pájaros de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen44.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Adorno de una rosa de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen45.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Flor de alcatraz tallada de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen46.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tigre de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen47.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Esfera de una flor de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <h3 class="letra3">Artesanía de Juguetes</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen50.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Muñeca de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen13.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Camión de carga de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen14.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Camioneta de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen15.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Camión de carga de polvo de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen33.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Muñeco de cascanueces de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen34.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Robot de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen28.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Mesedora de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen48.jpg" class="img-fluid imagen5" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Carrito con valero de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen49.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Oso de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <h3 class="letra3">Artesanía de Jardinería</h3>
-                <br>
-                <!--Offset classes-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen31.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Troncos para las plantas de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen27.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Cajas para las plantas de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen14.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Camioneta de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen2.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Tronco de madera para velas.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen4.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Pozo de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen51.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Casa para pájaros de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4"><img src="imagenes/imagen24.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Triciclo de madera para las masetas.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen35.jpg" class="img-fluid imagen4" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Jarrón de madera.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"><img src="imagenes/imagen52.jpg" class="img-fluid imagen2" alt="Responsive image">
-                            <div class="dropdown">
-                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2 colorm2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nombre
-                                </button>
-                                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;" id="colorm1">
-                                    <p class="mb-0">Cajas de madera para las masetas.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
+            </div>
+            <br>
             
-         
-            <script src="bootstrap/jquery-3.4.1.slim.min.js"></script>
-            <script src="bootstrap/popper.min.js"></script>
-            <script src="bootstrap/bootstrap.min.js"></script>    
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía Talladas</p>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen17.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Obrero de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen38.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Estatua de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen39.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Señor de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagens6.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Flor talla de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen43.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Adorno de pájaros de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen44.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Adorno de una rosa de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen45.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Flor de alcatraz tallada de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen46.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tigre de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-4 is-offset-5">
+                    <img src="imagenes/imagen47.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Esfera de una flor de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Juguetes</p>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen50.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Muñeca de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen13.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Camión de carga de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen14.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Camioneta de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen15.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Camión de carga de polvo de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen33.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Muñeco de cascanueces de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen34.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Robot de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen48.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Carrito con valero de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen49.jpg" class="imagen5">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Oso de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+            <p class="title is-3 is-spaced letra3 has-text-black">Artesanía de Jardinería</p>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen31.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Troncos para las plantas de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen27.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Cajas para las plantas de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen2.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Tronco de madera para velas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen4.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Pozo de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="imagenes/imagen51.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Casa para pájaros de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen24.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Triciclo de madera para las masetas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen35.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Jarrón de madera.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="imagenes/imagen52.jpg" class="imagen4">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button has-background-primary" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span> Nombre</span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content has-background-warning">
+                                <div class="dropdown-item">
+                                    <p>Cajas de madera para las masetas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </body>
     </html>
 _UNO;

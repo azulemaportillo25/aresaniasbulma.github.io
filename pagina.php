@@ -26,8 +26,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="column">
-                        <p class=" has-background-danger-dark letra title is-1 has-text-link">Artesanías en Madera</p>
+                    <div class="column letra">
+                        <p class=" has-background-danger-dark title is-1 has-text-link is-italic has-text-centered">Artesanías en Madera</p>
                     </div>
                     <div class="column">
                         <div class="columns is-mobile">
@@ -53,329 +53,290 @@
                     </ul>
                 </nav>
             </div>
-
-            <!--Carousel-->
-            <!--cambia las imagnes automaticamnete-->
-            <div id="carouselExampleControls" class="carousel slide centrarCar imag border border-danger" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="imagenes/imagen1.jpg" class=" imag d-block w-100" alt="Responsive image">
-                        <br>
-                        <br>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="letra centrado">Las mejores Artesanías en Madera.</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/imagen2.jpg" class="imag d-block w-100" alt="Responsive image">
-                        <br>
-                        <br>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="letra centrado">Las mejores Artesanías en Madera.</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/imagen3.jpg" class="imag d-block w-100" alt="Responsive image">
-                        <br>
-                        <br>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="letra centrado">Las mejores Artesanías en Madera.</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/imagen4.jpg" class="imag d-block w-100" alt="Responsive image">
-                        <br>
-                        <br>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="letra centrado">Las mejores Artesanías en Madera.</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/imagen5.jpg" class="imag d-block w-100" alt="Responsive image">
-                        <br>
-                        <br>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="letra centrado">Las mejores Artesanías en Madera.</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/imagen9.jpg" class="imag d-block w-100" alt="Responsive image">
-                        <br>
-                        <br>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="letra centrado">Las mejores Artesanías en Madera.</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/imagen29.jpg" class="imag d-block w-100" alt="Responsive image">
-                        <br>
-                        <br>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="letra centrado">Las mejores Artesanías en Madera.</h5>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
             <br>
+           
+            <h5 class="letra centrado subtitle is-3 has-text-white has-background-primary-dark">Las mejores Artesanías en Madera.</h5>
             <br>
-
-            <!--Accordion Example-->
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <button id ="BotonF1" class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Importancia sobre las Artesanias
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body Info1">
-                            <p class="text-justify">Se refiere al trabajo de un artesano que realiza sus trabajos a mano, con sus piezas únicas y los sentimientos que le dan a cada una de sus obras. La artesanía es totalmente cultural, ya que tiene la particularidad de variar dependiendo del contexto social, el paisaje, el clima y la historia del lugar donde se realiza. La madera puede ser trabajada para obtener múltiples formas las cuales lograremos obtener una gran diversidad de formas que nos permitirán obtener juguetes, adornos, muebles, entre otros productos.</p>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6 centrado">
-                                        <img src="imagenes/artesano.jpg" class="img-fluid image border border-success" alt="Responsive image">
-                                    </div>
-                                    <div class="col-md-6 centrado">
-                                        <img src="imagenes/artesano2.jpg" class="img-fluid image border border-success" alt="Responsive image">
+            <div class="card">
+                <header class="card-header centrado">
+                    <p class="card-header-title has-text-primary-dark" id ="BotonF1">
+                        Importancia sobre las Artesanias
+                    </p>
+                </header>
+                <div class="card-content has-background-warning">
+                    <div class="content">
+                        <p class="text-justify">Se refiere al trabajo de un artesano que realiza sus trabajos a mano, con sus piezas únicas y los sentimientos que le dan a cada una de sus obras. La artesanía es totalmente cultural, ya que tiene la particularidad de variar dependiendo del contexto social, el paisaje, el clima y la historia del lugar donde se realiza. La madera puede ser trabajada para obtener múltiples formas las cuales lograremos obtener una gran diversidad de formas que nos permitirán obtener juguetes, adornos, muebles, entre otros productos.</p>
+                        <br>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="columns is-mobile">
+                                    <div class="column is-11 is-offset-6">
+                                        <img src="imagenes/artesano.jpg" class="imagen12">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                   <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button id ="BotonF2" class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6 centrado">
-                                            Artesanias de Objetos  
-                                        </div>
-                                        <div class="col-md-6 centrado">
-                                            Artesanias de Animales
-                                        </div>
+                            <div class="column">
+                                <div class="columns is-mobile">
+                                    <div class="column is-4 is-offset-1">
+                                       <img src="imagenes/artesano2.jpg" class="imagen12">
                                     </div>
-                                </div>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body Info1">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6 centrado">
-                                        <div class="card border-primary" style="width: 18rem;">
-                                            <div class="card-body" id="colorcad">
-                                                <p class="card-text">La artesanía de objetos, se representan y se ocupan más bien para la decoración de hogares o lugares como las lámparas, sillas, macetas, etc.</p>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagen1.jpg" class="img-fluid image border border-success" alt="Responsive image">
-                                                        </div>
-                                                        <div class="col-md-6 centrado"> 
-                                                           <img src="imagenes/imagen7.jpg" class="img-fluid image border border-success" alt="Responsive image">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 centrado">
-                                        <div class="card border-primary" style="width: 18rem;">
-                                            <div class="card-body" id="colorcad2">
-                                                <p class="card-text">Las artesanías en forma de animales, al igual que las artesanías de objetos, son utilizadas para la decoración de hogares, lugares o jardines, se pueden utilizar para adornar al gusto de cada persona.</p>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagen21.jpg" class="img-fluid image image border border-success" alt="Responsive image">
-                                                        </div>
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagen32.jpg" class="img-fluid image image border border-success" alt="Responsive image">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingthree">
-                        <h2 class="mb-0">
-                            <button id ="BotonF3" class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-4 centrado">
-                                           Artesanias Talladas
-                                        </div>
-                                        <div class="col-md-4 centrado">
-                                            Artesanias de juguetes
-                                        </div>
-                                        <div class="col-md-4 centrado">
-                                            Artesanias para jardinería
-                                        </div>
-                                    </div>
-                                </div
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionExample">
-                        <div class="card-body Info1">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-4 centrado">
-                                        <div class="card border-primary" style="width: 18rem;">
-                                            <div class="card-body border-primary" id="colorcad3">
-                                                <p class="card-text">Las artesanías de madera que son talladas se consideran como las más utilizadas por la única razón de que refleja un sentimiento y también existen diferentes formas.</p>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagens6.jpg" class="img-fluid image border border-success" alt="Responsive image">
-                                                        </div>
-                                                        <div class="col-md-6 centrado">
-                                                           <img src="imagenes/imagens11.jpg" class="img-fluid image border border-success" alt="Responsive image">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 centrado">
-                                        <div class="card border-primary" style="width: 18rem;">
-                                            <div class="card-body border-primary" id="colorcad4">
-                                                <p class="card-text">La tradición artesanal de fabricar juguetes de madera se mantiene de las personas que aún no pierden ese gusto.</p>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagen14.jpg" class="img-fluid image image border border-success" alt="Responsive image">
-                                                        </div>
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagen34.jpg" class="img-fluid image image border border-success" alt="Responsive image">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 centrado">
-                                        <div class="card border border-primary" style="width: 18rem;">
-                                            <div class="card-body" id="colorcad5">
-                                                <p class="card-text">La artesanía en madera, para la jardinería, son muy bonitos, para la adornación y para poner de maceteros para las plantas.</p>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagen27.jpg" class="img-fluid image image border border-success" alt="Responsive image">
-                                                        </div>
-                                                        <div class="col-md-6 centrado">
-                                                            <img src="imagenes/imagen31.jpg" class="img-fluid image image border border-success" alt="Responsive image">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
                 </div>
             </div>
             <br>
-            <br>
-            
-            <!--Pie de pagina-->
-            <div data-role="footer" id="piepag">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 centrado">
-                            <p>Se brinda información de:</p>
+            <!--card2-->
+            <div class="card">
+                 <div class="columns" id ="BotonF2">
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-6">
+                                <p class="card-header-title has-text-primary-dark centrado"> Artesanias de Objetos </p>
+                            </div>
                         </div>
-                        <div class="col-md-5 centrado">
-                            <img src="imagenes/contacto.png" class="icon img-fluid" alt="Responsive image">
-                            <p>Contacto:</p>
-                        </div>
-                        <br>
-                        <div class="col-md-5 text-right">
-                            <p>Azulema Portillo Laparra</p>
-                        </div>
-                        <div class="col-md-5 centrado">
-                            <img src="imagenes/telefono.jpg" class="icon img-fluid" alt="Responsive image">
-                            <p>Telefono:</p>
-                        </div>
-                        <br>
-                        <div class="col-md-5 text-right">
-                            <p>983-211-1951</p>
+                    </div>
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-4">
+                               <p class="card-header-title has-text-primary-dark centrado"> Artesanias de Animales </p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="card-content has-background-warning">
+                    <div class="tile is-ancestor">
+                        <div class="card-content has-background-info centrarCar">
+                            <div class="tile is-parent">
+                               <p>La artesanía de objetos, se representan y se ocupan más bien para la decoración de hogares o lugares como las lámparas, sillas, macetas, etc.</p>    
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-6">
+                                            <img src="imagenes/imagen1.jpg" class="imagen12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-4">
+                                            <img src="imagenes/imagen7.jpg" class="imagen12">
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <br>
-
-                    <div class="row">
-                        <div class="col-md-5 centrado">
-                            <img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon img-fluid" alt="Responsive image">
-                            <p>Correo:</p>
-                        </div>
-                        <br>
-                        <div class="col-md-5 text-right">
-                            <p>portilloazulema@gmail.com</p>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 centrado">
-                            <p>Hecho en México.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 centrado">
-                           <p>Carrera de Programación en la Preparatoria Centro de Bachillerato Tecnológico Industrial y de Servicios no.253 "Miguel Hidalgo y Costilla".</p>
-                        </div>
-                   </div>
-                </div>
-                <div data-role="footer" id="piepag2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-2 centrado">
-                                <!--link de facebook-->
-                                <a href="https://m.facebook.com/"><img src="imagenes/facebook.png" class="icon2 img-fluid" alt="Responsive image"></a>
+                    <div class="tile is-ancestor">
+                       <div class="card-content has-background-success centrarCar">
+                            <div class="tile is-parent">
+                               <p>Las artesanías en forma de animales, al igual que las artesanías de objetos, son utilizadas para la decoración de hogares, lugares o jardines, se pueden utilizar para adornar al gusto de cada persona.</p>    
                             </div>
-                            <div class="col-2 centrado">
-                                <!--link de Gmail-->
-                                <a href="https://www.google.com/intl/es/gmail/about/"><img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon2 img-fluid" alt="Responsive image"></a>
-                            </div>
-                            <div class="col-2 centrado">
-                                <!--link de Instagram-->
-                                <a href="https://www.instagram.com/"><img src="imagenes/logotipo-instagram_1045-436.jpg" class="icon2 img-fluid" alt="Responsive image"></a>
-                            </div>
-                            <div class="col-2 centrado">
-                                <!--link de Twitter-->
-                                <a href="https://twitter.com/login?lang=es"><img src="imagenes/twitter.png" class="icon2 img-fluid" alt="Responsive image"></a>
-                            </div>
-                            <div class="col-2 centrado">
-                                <!--link de spotify-->
-                                <a href="https://www.spotify.com/pe/"><img src="imagenes/spot.png" class="icon2 img-fluid" alt="Responsive image"></a>
-                            </div>
-                            <div class="col-2 centrado">
-                                <!--link de Twitter-->
-                                <a href="https://www.youtube.com/"><img src="imagenes/youtube.png" class="icon2 img-fluid" alt="Responsive image"></a>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-6">
+                                            <img src="imagenes/imagen21.jpg" class="imagen12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                   <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-4">
+                                            <img src="imagenes/imagen32.jpg" class="imagen12">
+                                        </div>
+                                    </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
+
+            <!--card3-->
+            <div class="card">
+                <div class="columns" id ="BotonF3">
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-6">
+                                <p class="card-header-title has-text-primary-dark centrado"> Artesanias Talladas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-4">
+                               <p class="card-header-title has-text-primary-dark centrado"> Artesanias de juguetes</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="card-content has-background-warning">
+                    <div class="tile is-ancestor">
+                        <div class="card-content has-background-info centrarCar">
+                            <div class="tile is-parent">
+                               <p>Las artesanías de madera que son talladas se consideran como las más utilizadas por la única razón de que refleja un sentimiento y también existen diferentes formas.</p>    
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-6">
+                                            <img src="imagenes/imagens6.jpg" class="imagen12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-4">
+                                            <img src="imagenes/imagens11.jpg" class="imagen12">
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="tile is-ancestor">
+                       <div class="card-content has-background-success centrarCar">
+                            <div class="tile is-parent">
+                               <p>La tradición artesanal de fabricar juguetes de madera se mantiene de las personas que aún no pierden ese gusto.</p>    
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-6">
+                                            <img src="imagenes/imagen14.jpg" class="imagen12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                   <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-4">
+                                            <img src="imagenes/imagen34.jpg" class="imagen12">
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!--card4-->
+            <div class="card">
+                <div class="columns" id ="BotonF3">
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-11 is-offset-5">
+                                <p class="card-header-title has-text-primary-dark centrado">Artesanias para jardinería</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content has-background-warning">
+                    <div class="tile is-ancestor">
+                       <div class="card-content has-background-info centrarCar">
+                            <div class="tile is-parent">
+                               <p>La tradición artesanal de fabricar juguetes de madera se mantiene de las personas que aún no pierden ese gusto.</p>    
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-6">
+                                            <img src="imagenes/imagen27.jpg" class="imagen12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                   <div class="columns is-mobile">
+                                        <div class="column is-11 is-offset-4">
+                                            <img src="imagenes/imagen31.jpg" class="imagen12">
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!--Pie de pagina-->
+            <footer class="footer" id="piepag">
+                <div class="content has-text-centered">
+                    <div class="columns is-gapless is-multiline is-mobile has-text-black">
+                        <div class="column">Se brinda información de:</div>
+                    </div>
+                    <div class="columns is-mobile">
+                        <div class="column is-1 is-offset-3 has-text-black">
+                            <img src="imagenes/contacto.png" class="icon">
+                            <p>Contacto:</p>
+                        </div>
+                        <div class="column is-4 is-offset-3 has-text-black">
+                            <p>Azulema Portillo Laparra</p>
+                        </div>
+                    </div>
+                    <div class="columns is-mobile">
+                        <div class="column is-1 is-offset-3 has-text-black">
+                            <img src="imagenes/telefono.jpg" class="icon">
+                            <p>Telefono:</p>
+                        </div>
+                        <div class="column is-4 is-offset-3 has-text-black">
+                            <p>983-211-1951</p>
+                        </div>
+                    </div>
+                    <div class="columns is-mobile">
+                        <div class="column is-1 is-offset-3 has-text-black">
+                            <img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon img-fluid" alt="Responsive image">
+                            <p>Correo:</p>
+                        </div>
+                        <div class="column is-4 is-offset-3 has-text-black">
+                            <p>portilloazulema@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="columns is-gapless is-multiline is-mobile">
+                        <div class="column has-text-black">Hecho en México.</div>
+                    </div>
+                    <div class="columns is-gapless is-multiline is-mobile">
+                        <div class="column has-text-black">Carrera de Programación en la Preparatoria Centro de Bachillerato Tecnológico Industrial y de Servicios no.253 "Miguel Hidalgo y Costilla".</div>
+                    </div>
+                </div>
+            </footer>
+
+            <!--Pie de pagina 2-->
+            <footer class="footer" id="piepag2">
+                <div class="columns is-gapless is-multiline is-mobile">
+                    <div class="column has-text-black">
+                        <!--link de facebook-->
+                        <a href="https://m.facebook.com/"><img src="imagenes/facebook.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de Gmail-->
+                        <a href="https://www.google.com/intl/es/gmail/about/"><img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                       <!--link de Instagram-->
+                        <a href="https://www.instagram.com/"><img src="imagenes/logotipo-instagram_1045-436.jpg" class="icon2"></a>    
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de Twitter-->
+                        <a href="https://twitter.com/login?lang=es"><img src="imagenes/twitter.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de spotify-->
+                        <a href="https://www.spotify.com/pe/"><img src="imagenes/spot.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de youtube-->
+                        <a href="https://www.youtube.com/"><img src="imagenes/youtube.png" class="icon2"></a>
+                    </div>
+                </div>
+            </footer>
         </body>
     </html>
 _UNO;

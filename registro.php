@@ -2,7 +2,7 @@
   
   require_once 'login.php';
   $conn = new mysqli($hn, $un, $pw, $db);
-  if ($conn->connect_error) die("Ha ocurrido un error :c");
+  if ($conn->connect_error) die("Ha ocurrido un error");
 
   if (!empty($_POST['nombre'])    &&
       !empty($_POST['apellido'])  &&
@@ -64,9 +64,12 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Página de regístrase a Artesanías en Madera</title>
-      <link rel="stylesheet" href="color.css">
-      <!--Bootstrap css-->
-      <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+      <link rel="stylesheet" href="colors.css">
+      <script src='node_modules/jquery/dist/jquery.min.js'></script>
+      <script src='node_modules/jquery-mobile/js/jquery.mobile.js'></script>
+      <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet">
+      <script src='javascript.js'></script>
+
       <style>
         body{
           background-color: coral;
@@ -143,143 +146,164 @@
 
       </head>
       <body>
-        <div data-role='header' id="encabezado">
-          <!--Offset classes-->
-          <div class="container">
-              <div class="row">
-                <div class="col-md-4"><img src="imagenes/imagen24.jpg" class="img-fluid imagen" alt="Responsive image"></div>
-                <div class="col-md-4"><p class="font-italic display-3 letra">Artesanías en Madera</p></div>
-                <div class="col-md-4"><img src="imagenes/imagen29.jpg" class="img-fluid float-right imagen" alt="Responsive image"></div>
+        <div data-role='header' class="encabezado">
+          <div class="columns">
+            <div class="column">
+              <div class="columns is-mobile">
+                <div class="column is-11 is-offset-6">
+                  <figure class="image is-128x128">
+                    <img src="imagenes/imagen24.jpg" class="imagen">
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="column letra">
+              <p class=" has-background-danger-dark title is-1 has-text-link is-italic has-text-centered">Artesanías en Madera</p>
+            </div>
+            <div class="column">
+              <div class="columns is-mobile">
+                <div class="column is-4 is-offset-1">
+                  <figure class="image is-128x128">
+                    <img src="imagenes/imagen29.jpg" class="imagen">
+                  </figure>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <br>
-       
-       <!--Cadrd: Example-->
-       <div class="card centrado centrarCar" style="width: 38rem; background: cyan;">
-           <div class="card-body">
-             <h5 class="card-title">Formulario de registro</h5>
-             Lo sentimos se encontraron los siguientes errores<br>
-             en su formulario: <p><font color=red size=1><i>$fail</i></font></p>
-             <form method="post" action="registro.php" onsubmit="return validate(this)">
-               <div class="form-group">
-                 <label for="formGroupExampleInput">Nombres:</label>
-                 <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" value="$forename">
-               </div>
-               <div class="form-group">
-                 <label for="formGroupExampleInput2">Apellidos:</label>
-                 <input type="text" class="form-control" id="formGroupExampleInput2" name="apellido" value="$surname">
-               </div>
-               <div class="form-group">
-                 <label for="formGroupExampleInput3">Nombre de usuario:</label>
-                 <input type="text" class="form-control" id="formGroupExampleInput3" name="usuario" value="$username">
-               </div>
-               <div class="form-group">
-                 <label for="formGroupExampleInput4">Contraseña</label>
-                 <input type="password" class="form-control" id="formGroupExampleInput4" name="clave" value="$password">
-               </div>
-               <div class="form-group">
-                 <label for="formGroupExampleInput5">Años</label>
-                 <input type="text" class="form-control" id="formGroupExampleInput5" name="edad" value="$age">
-               </div>
-               <div class="form-group">
-                 <label for="formGroupExampleInput6">Correo</label>
-                 <input type="text" class="form-control" id="formGroupExampleInput6" name="correo" value="$email">
-               </div>
-               <button type="submit" class="btn btn-outline-dark">Guardar datos</button>
-               <button type="button" class="btn btn-outline-dark"><a href="Productos.php">Pagina de Productos</a></button>
-             </form>
-           </div>
-       </div>
-       <br>
-       <br>
+        
+        <!--menu-->
+        <div class="notification is-danger">
+          <nav class="breadcrumb is-medium is-centered" aria-label="breadcrumbs">
+            <ul>
+              <li><a class="has-text-primarys has-text-dark" href="#">Artesanías en Madera:</a></li>
+              <li><a class="has-text-primarys has-text-dark" href="pagina.php">Inicio</a></li>
+            </ul>
+            </nav>
+        </div>
+        <br>
 
-       <!--Pie de pagina-->
-       <div data-role="footer" id="piepag">
-         <div class="container">
-           <div class="row">
-             <div class="col-md-12 centrado">
-               <p>Se brinda información de:</p>
-             </div>
-             <div class="col-md-5 centrado">
-               <img src="imagenes/contacto.png" class="icon img-fluid" alt="Responsive image">
-               <p>Contacto:</p>
-             </div>
-             <br>
-             <div class="col-md-5 text-right">
-               <p>Azulema Portillo Laparra</p>
-             </div>
-             <div class="col-md-5 centrado">
-               <img src="imagenes/telefono.jpg" class="icon img-fluid" alt="Responsive image">
-               <p>Telefono:</p>
-             </div>
-             <br>
-             <div class="col-md-5 text-right">
-               <p>983-211-1951</p>
-             </div>
+        <!--Card--> 
+        <div class="centrado centrarCar">
+          <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8 centrarCar">
+              <div class="tile">
+                <div class="tile is-parent is-vertical">
+                  <article class="tile is-child notification is-primary">
+                    <p class="title centrado">Formulario de registro</p>
+                    <p class="subtitle centrado">Lo sentimos se encontraron los siguientes errores</p>
+                    <br>
+                    <p class="centrado">En su formulario: <p class="centrado"><font color=black size=3><i>$fail</i></font></p>
+                    <br>
+                    <form method="post" action="registro.php" onsubmit="return validate(this)">
+                      <div class="centrado">
+                        <label class="label">Nombres:</label>
+                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="nombre" value="$forename">
+                      </div><br>
+                      <div class="centrado">
+                        <label class="label">Apellidos:</label>
+                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="apellido" value="$surname">
+                      </div><br>
+                      <div class="centrado">
+                        <label class="label">Nombre de usuario:</label>
+                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="usuario" value="$username">
+                      </div><br>
+                      <div class="centrado">
+                        <label class="label">Contraseña:</label>
+                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="clave" value="$password">
+                      </div><br>
+                      <div class="centrado">
+                        <label class="label">Años:</label>
+                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="edad" value="$age">
+                      </div><br>
+                      <div class="centrado">
+                        <label class="label">Correo:</label>
+                        <input class="input is-rounded" type="text" placeholder="Rounded input" name="correo" value="$email">
+                      </div><br>
+                      <button type="submit"class="button is-danger is-outlined">Guardar datos</button>
+                      <button type="button" class="button is-link is-outlined"><a href="Productos.php">Pagina de Productos</a></button>
+                    </form>
+                  </article>
+                </div>
+              </div>
            </div>
-           <br>
-           <div class="row">
-             <div class="col-md-5 centrado">
-               <img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon img-fluid" alt="Responsive image">
-               <p>Correo:</p>
-             </div>
-             <br>
-             <div class="col-md-5 text-right">
-               <p>portilloazulema@gmail.com</p>
-             </div>
-             <br>
-           </div>
-             <div class="row">
-               <div class="col-md-12 centrado">
-                 <p>Hecho en México.</p>
-               </div>
-             </div>
-             <div class="row">
-               <div class="col-md-12 centrado">
-                 <p>Carrera de Programación en la Preparatoria Centro de Bachillerato Tecnológico Industrial y de Servicios no.253 "Miguel Hidalgo y Costilla".</p>
-               </div>
-             </div>
-         </div>
-         <div data-role="footer" id="piepag2">
-           <div class="container">
-             <div class="row">
-               <div class="col-2 centrado">
-                 <!--link de facebook-->
-                 <a href="https://m.facebook.com/"><img src="imagenes/facebook.png" class="icon2 img-fluid" alt="Responsive image"></a>
-               </div>
-               <div class="col-2 centrado">
-                 <!--link de Gmail-->
-                 <a href="https://www.google.com/intl/es/gmail/about/"><img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon2 img-fluid" alt="Responsive image"></a>
-               </div>
-               <div class="col-2 centrado">
-                 <!--link de Instagram-->
-                 <a href="https://www.instagram.com/"><img src="imagenes/logotipo-instagram_1045-436.jpg" class="icon2 img-fluid" alt="Responsive image"></a>
-                </div>
-                <div class="col-2 centrado">
-                  <!--link de Twitter-->
-                  <a href="https://twitter.com/login?lang=es"><img src="imagenes/twitter.png" class="icon2 img-fluid" alt="Responsive image"></a>
-                </div>
-                <div class="col-2 centrado">
-                  <!--link de spotify-->
-                  <a href="https://www.spotify.com/pe/"><img src="imagenes/spot.png" class="icon2 img-fluid" alt="Responsive image"></a>
-                </div>
-                <div class="col-2 centrado">
-                  <!--link de Twitter-->
-                  <a href="https://www.youtube.com/"><img src="imagenes/youtube.png" class="icon2 img-fluid" alt="Responsive image"></a>
-                </div>
-             </div>
-           </div>
-         </div>
-       </div>
-       
-       <script src="bootstrap/jquery-3.4.1.slim.min.js"></script>
-       <script src="bootstrap/popper.min.js"></script>
-       <script src="bootstrap/bootstrap.min.js"></script>
+        </div> 
+        <br>
 
-     </body>
-   </html>
+        <!--Pie de pagina-->
+        <footer class="footer" id="piepag">
+          <div class="content has-text-centered">
+            <div class="columns is-gapless is-multiline is-mobile has-text-black">
+              <div class="column">Se brinda información de:</div>
+            </div>
+            <div class="columns is-mobile">
+              <div class="column is-1 is-offset-3 has-text-black">
+                <img src="imagenes/contacto.png" class="icon">
+                <p>Contacto:</p>
+              </div>
+              <div class="column is-4 is-offset-3 has-text-black">
+                <p>Azulema Portillo Laparra</p>
+              </div>
+            </div>
+            <div class="columns is-mobile">
+              <div class="column is-1 is-offset-3 has-text-black">
+                <img src="imagenes/telefono.jpg" class="icon">
+                <p>Telefono:</p>
+              </div>
+              <div class="column is-4 is-offset-3 has-text-black">
+                <p>983-211-1951</p>
+              </div>
+            </div>
+            <div class="columns is-mobile">
+              <div class="column is-1 is-offset-3 has-text-black">
+                <img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon img-fluid" alt="Responsive image">
+                <p>Correo:</p>
+              </div>
+              <div class="column is-4 is-offset-3 has-text-black">
+                <p>portilloazulema@gmail.com</p>
+              </div>
+            </div>
+            <div class="columns is-gapless is-multiline is-mobile">
+              <div class="column has-text-black">Hecho en México.</div>
+            </div>
+              <div class="columns is-gapless is-multiline is-mobile">
+                <div class="column has-text-black">Carrera de Programación en la Preparatoria Centro de Bachillerato Tecnológico Industrial y de Servicios no.253 "Miguel Hidalgo y Costilla".</div>
+              </div>
+            </div>
+          </footer>
+
+            <!--Pie de pagina 2-->
+            <footer class="footer" id="piepag2">
+                <div class="columns is-gapless is-multiline is-mobile">
+                    <div class="column has-text-black">
+                        <!--link de facebook-->
+                        <a href="https://m.facebook.com/"><img src="imagenes/facebook.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de Gmail-->
+                        <a href="https://www.google.com/intl/es/gmail/about/"><img src="imagenes/Gmail_icon-icons.com_75706.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                       <!--link de Instagram-->
+                        <a href="https://www.instagram.com/"><img src="imagenes/logotipo-instagram_1045-436.jpg" class="icon2"></a>    
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de Twitter-->
+                        <a href="https://twitter.com/login?lang=es"><img src="imagenes/twitter.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de spotify-->
+                        <a href="https://www.spotify.com/pe/"><img src="imagenes/spot.png" class="icon2"></a>
+                    </div>
+                    <div class="column has-text-black">
+                        <!--link de youtube-->
+                        <a href="https://www.youtube.com/"><img src="imagenes/youtube.png" class="icon2"></a>
+                    </div>
+                </div>
+            </footer>
+    </body>
+  </html>
 _UNO;
    
 function validate_forename($field)
@@ -338,9 +362,6 @@ function fix_string($string)
   return htmlentities ($string);
 }
 
-
-   $result->close();
-   $conn->close();
 
    function get_post($conn, $var) /*Aqui esta mandando a llamar la funcion de "get_post" */
    {

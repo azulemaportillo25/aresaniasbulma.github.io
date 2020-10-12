@@ -1,7 +1,7 @@
 <?php // login.php
       // Change these details to suit your installation
   $hn = 'localhost'; /*el localhost*/
-  $db = 'negocio'; /*la base de datos*/
+  $db = 'negocios'; /*la base de datos*/
   $un = 'root';          /*el ususrio*/
   $pw = '';              /*la contraseña*/
 
